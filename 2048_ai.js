@@ -29,7 +29,6 @@ function Ai() {
         //if (this.foo == null) this.foo = 0;
         //return this.foo++ % 4;
         
-        return Math.floor(Math.random()*4)
         
         if(this.pastGrid == grid){
           return 0;
