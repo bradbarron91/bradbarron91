@@ -30,7 +30,7 @@ function Ai() {
         //return this.foo++ % 4;
         
         
-        if(this.pastGrid == grid){
+        if(this.gridEquals(this.pastGrid,grid)){
           return 0;
         }
         this.pastGrid = grid.copy();
@@ -38,11 +38,23 @@ function Ai() {
         
     }
     
-    
+    this.gridEquals(grid1,grid2){
+        for(var i = 0; i < 4; i++){
+            for(var j = 0; j < 4; j++){
+                if(grid1[i][j] != null && grid2[i][j] != null){
+                    if(grid1[i][j].value != grid2[i][j].value) return false;
+                }else if (grid1[i][j] == null && grid2[i][j] == null){
+                    continue;
+                }else{
+                    return false;
+                }
+            }
+        }
+    }
     
     this.pastGrid;
     
-    this.movesList = [3,2,1,2];
+    this.movesList = [1,2,1,2];
     
     this.iterator = 0;
     
