@@ -38,7 +38,7 @@ function Ai() {
         
     }
     
-    this.gridEquals(grid1,grid2){
+    this.gridEquals = function(grid1,grid2){
         for(var i = 0; i < 4; i++){
             for(var j = 0; j < 4; j++){
                 if(grid1[i][j] != null && grid2[i][j] != null){
