@@ -31,7 +31,7 @@ function Ai() {
         
         
         if(this.gridEquals(this.pastGrid,grid)){
-          return 0;
+          return this.shakeMovesList[this.shakeIteratorNext()];
         }
         this.pastGrid = grid.copy();
         return this.movesList[this.iteratorNext()];
@@ -61,6 +61,15 @@ function Ai() {
     this.iterator = 0;
     
     this.iteratorNext = function() {
+      if(this.iterator == 3) this.iterator = 0;
+      else this.iterator++;
+      return this.iterator;
+    }
+    
+    this.shakeIterator = 0;
+     this.shakeMovesList = [0,3,0,3];
+    
+    this.shakeIteratorNext = function() {
       if(this.iterator == 3) this.iterator = 0;
       else this.iterator++;
       return this.iterator;
