@@ -39,11 +39,12 @@ function Ai() {
     }
     
     this.gridEquals = function(grid1,grid2){
+        if(this.pastGrid == 0) return false;
         for(var i = 0; i < 4; i++){
             for(var j = 0; j < 4; j++){
-                if(grid1[i][j] != null && grid2[i][j] != null){
-                    if(grid1[i][j].value != grid2[i][j].value) return false;
-                }else if (grid1[i][j] == null && grid2[i][j] == null){
+                if(grid1.cells[i][j] != null && grid2.cells[i][j] != null){
+                    if(grid1.cells[i][j].value != grid2.cells[i][j].value) return false;
+                }else if (grid1.cells[i][j] == null && grid2.cells[i][j] == null){
                     continue;
                 }else{
                     return false;
