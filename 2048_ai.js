@@ -28,6 +28,9 @@ function Ai() {
         // sample AI:
         //if (this.foo == null) this.foo = 0;
         //return this.foo++ % 4;
+        
+        return Math.floor(Math.random()*4)
+        
         if(this.pastGrid == grid){
           return 0;
         }
@@ -35,6 +38,8 @@ function Ai() {
         return this.movesList[this.iteratorNext()];
         
     }
+    
+    
     
     this.pastGrid;
     
