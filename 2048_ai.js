@@ -51,6 +51,7 @@ function Ai() {
                 }
             }
         }
+        return true;
     }
     
     this.pastGrid;
